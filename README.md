@@ -30,7 +30,24 @@ We are exploring two innovative approaches to predicting the value of used cars 
 
 Read data file and undrstand 
 
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
+| Features   | null value count |
+| :===	     |             ---: |
+|id          | 0
+|region    |             0|
+|price     |             0|
+|year      |          1205|
+|manufacturer |      17646|
+|model       |        5277|
+|condition    |     174104|
+|cylinders     |    177678|
+|fuel           |     3013|
+|odometer        |    4400|
+|title_status     |   8242|
+|transmission      |  2556|
+|VIN              | 161042|
+|drive            | 130567|
+|size             | 306361|
+|type             |  92858|
+|paint_color      | 130203|
+|state           |      0|
+|condition_code   |      0|
