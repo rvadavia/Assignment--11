@@ -29,7 +29,6 @@ By addressing these questions, the used car dealer could develop a data-driven a
 We are exploring two innovative approaches to predicting the value of used cars from a dataset containing three million entries. The first method is linear regression, an intuitive machine learning technique which draws meaningful insights from data using mathematical models and equations. Our second approach involves KMeans(), a powerful clustering algorithm provided by scikit-learn library in Python that organizes similar data points into clusters for unsupervised learning. By randomly selecting K centroids and iteratively assigning them until convergence is reached, we can gain valuable insight about how car attributes shape their market value!
 
 Read data file and undrstand 
-<<<<<<< HEAD
 
 |    Features  |      Cont of nul values |
 |:-------------|-------:|
@@ -51,5 +50,3 @@ Read data file and undrstand
 | type         |  92858 |
 | paint_color  | 130203 |
 | state        |      0 |
-=======
->>>>>>> 3bdbf53f0065adfb27cf44747b2bf4dfe305a469
