@@ -1,0 +1,13 @@
+|    | features     | dtypes   |   NaN count |   NaN percentage |
+|---:|:-------------|:---------|------------:|-----------------:|
+|  0 | price        | int64    |           0 |       0          |
+|  1 | year         | float64  |        1205 |       0.00282281 |
+|  2 | manufacturer | object   |       17646 |       0.0413371  |
+|  3 | model        | object   |        5277 |       0.0123618  |
+|  4 | condition    | object   |      174104 |       0.407852   |
+|  5 | cylinders    | object   |      177678 |       0.416225   |
+|  6 | fuel         | object   |        3013 |       0.00705819 |
+|  7 | odometer     | float64  |        4400 |       0.0103073  |
+|  8 | transmission | object   |        2556 |       0.00598763 |
+|  9 | size         | object   |      306361 |       0.717675   |
+| 10 | type         | object   |       92858 |       0.217527   |

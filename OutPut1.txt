@@ -1,0 +1,13 @@
+|              |      0 |
+|:-------------|-------:|
+| price        |      0 |
+| year         |   1205 |
+| manufacturer |  17646 |
+| model        |   5277 |
+| condition    | 174104 |
+| cylinders    | 177678 |
+| fuel         |   3013 |
+| odometer     |   4400 |
+| transmission |   2556 |
+| size         | 306361 |
+| type         |  92858 |
