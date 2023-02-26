@@ -1,13 +1,13 @@
 |    | features     | dtypes   |   NaN count |   NaN percentage |
 |---:|:-------------|:---------|------------:|-----------------:|
-|  0 | price        | int64    |           0 |       0          |
-|  1 | year         | float64  |        1205 |       0.00282281 |
-|  2 | manufacturer | object   |       17646 |       0.0413371  |
-|  3 | model        | object   |        5277 |       0.0123618  |
-|  4 | condition    | object   |      174104 |       0.407852   |
-|  5 | cylinders    | object   |      177678 |       0.416225   |
-|  6 | fuel         | object   |        3013 |       0.00705819 |
-|  7 | odometer     | float64  |        4400 |       0.0103073  |
-|  8 | transmission | object   |        2556 |       0.00598763 |
-|  9 | size         | object   |      306361 |       0.717675   |
-| 10 | type         | object   |       92858 |       0.217527   |
+|  0 | price        | Int64    |           0 |       0          |
+|  1 | year         | Int64    |        1173 |       0.00297727 |
+|  2 | manufacturer | string   |       16185 |       0.0410802  |
+|  3 | condition    | string   |      151389 |       0.384251   |
+|  4 | cylinders    | string   |      160410 |       0.407147   |
+|  5 | fuel         | string   |        2594 |       0.00658401 |
+|  6 | odometer     | Int64    |        2290 |       0.0058124  |
+|  7 | transmission | string   |        1823 |       0.00462708 |
+|  8 | drive        | string   |      120254 |       0.305225   |
+|  9 | type         | string   |       85932 |       0.21811    |
+| 10 | paint_color  | string   |      117149 |       0.297344   |
