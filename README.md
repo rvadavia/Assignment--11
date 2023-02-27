@@ -30,26 +30,46 @@ We are exploring two innovative approaches to predicting the value of used cars 
 
 ### Read the data file and analyezed 
 
-
-
+data file vehicles.csv ahs subset of The original dataset contained information on 3 million used cars
+It has number of rows - 426880 and number of columns - 18
 
 we must remove irrelevant features like ‘id’, ’region’, ’vin’, ’title_status’, ’state’ and others from the dataset.
 
-|    | features     | dtypes   |   NaN count |   NaN percentage |
-|---:|:-------------|:---------|------------:|-----------------:|
-|  0 | price        | int64    |           0 |       0          |
-|  1 | year         | float64  |        1205 |       0.00282281 |
-|  2 | manufacturer | object   |       17646 |       0.0413371  |
-|  3 | model        | object   |        5277 |       0.0123618  |
-|  4 | condition    | object   |      174104 |       0.407852   |
-|  5 | cylinders    | object   |      177678 |       0.416225   |
-|  6 | fuel         | object   |        3013 |       0.00705819 |
-|  7 | odometer     | float64  |        4400 |       0.0103073  |
-|  8 | transmission | object   |        2556 |       0.00598763 |
-|  9 | size         | object   |      306361 |       0.717675   |
-| 10 | type         | object   |       92858 |       0.217527   |
+The results indicate many columns have null values and data types that may not provide helpful information for MLM. I analyze and apply corrections
+RangeIndex: 426880 entries, 0 to 426879
+Data columns (total 18 columns):
+ #   Column        Non-Null Count   Dtype  
+---  ------        --------------   -----  
+ 0   id            426880 non-null  int64  
+ 1   region        426880 non-null  object 
+ 2   price         426880 non-null  int64  
+ 3   year          425675 non-null  float64
+ 4   manufacturer  409234 non-null  object 
+ 5   model         421603 non-null  object 
+ 6   condition     252776 non-null  object 
+ 7   cylinders     249202 non-null  object 
+ 8   fuel          423867 non-null  object 
+ 9   odometer      422480 non-null  float64
+ 10  title_status  418638 non-null  object 
+ 11  transmission  424324 non-null  object 
+ 12  VIN           265838 non-null  object 
+ 13  drive         296313 non-null  object 
+ 14  size          120519 non-null  object 
+ 15  type          334022 non-null  object 
+ 16  paint_color   296677 non-null  object 
+ 17  state         426880 non-null  object 
+dtypes: float64(2), int64(2), object(14)
+memory usage: 58.6+ MB
 
-The results indicate many columns have null values. I analyze and apply corrections
+I applied the following data scrubbing 
+
+UsedCar_data = UsedCar_data.convert_dtypes() this converted features Data type Object to String
+
+Based on analyses, I drop the following features
+UsedCar_data_Rev2 = UsedCar_data.drop(['id','VIN','state' ,'region','title_status'], axis=1)
+UsedCar_data_Rev2 = UsedCar_data_Rev2.drop(['size'], axis=1)
+UsedCar_data_Rev2 = UsedCar_data_Rev2.drop(['model'], axis=1)
+
 
 UsedCar_data_r2.loc[UsedCar_data_r2['year'].isnull(),'year'] = 0
 UsedCar_data_r2.loc[UsedCar_data_r2['transmission'].isnull(),'transmission'] = 'NaN_tran'
@@ -64,9 +84,17 @@ UsedCar_data_r2.loc[UsedCar_data_r2['odometer'].isnull(),'odometer'] = 0
 
 aftre applying changes there are no null values
 
-sns.countplot(y = UsedCar_data_r2.year) showed that there are not many cars under the year 1995, so it would help to drop them
+I also notice that the target features  have outlier values that may negatively impact the  MLM
+I will drop features rows above and under specific values
 
+
+sns.countplot(y = UsedCar_data_r2.year) showed that there are not many cars under the year 1995, so it would help to drop them
 UsedCar_data_r2 = UsedCar_data_r2.loc[UsedCar_data_r2["year"] > 1995 ]
+
+Keep rows with price range $3000 to $250000
+
+UsedCar_data_r2 = UsedCar_data_r2.loc[UsedCar_data_r2["price"] > 3000 ]
+UsedCar_data_r2 = UsedCar_data_r2.loc[UsedCar_data_r2["price"] < 250000 ]
 
 ## I applied a similar approach to other features
 
@@ -82,3 +110,7 @@ UsedCar_data_r2 = UsedCar_data_r2.join(one_hot)
 Use same code for 'type,transmission,cylinders and others'
 
 # Although I had put in effort to clean the dataset and applied a linear regression model, my expectations of success were not met. It appears that I need some personalized guidance to make sense of this assignment.
+
+## Conclusion 
+
+### Based on the analyses, I think the dataset has a problem. To create a  good MLM, we need a dataset vetted by a business analyst with expertise in the domain ( Used car pricing) to select the right features  and have a dataset that reflects reality
